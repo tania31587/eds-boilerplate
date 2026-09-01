@@ -1,14 +1,14 @@
 .columns>div {
   display: flex;
-  flex-direction: column;
-  background-color: rgb(254, 254, 254);
-  color: black;
+  flex-direction: column;  
+  background-color: gray;
+  color: red;
   align-items: center;
 }
 
 .columns.example>div {
-  background-color: gray;
-  color: red;
+  background-color: rgb(254, 254, 254);
+  color: black;
 }
 
 .columns img {
