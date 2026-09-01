@@ -1,1 +1,2 @@
-/* Embed block js */
+export default function decorate() {
+}
