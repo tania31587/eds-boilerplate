@@ -2,8 +2,20 @@
   background-color: #0078d4;
   color: #fff;
   padding: 40px;
-  border-radius: 8px;
+  margin: 40px auto;
+  max-width: 900px;
+  border-radius: 16px;
   text-align: center;
+}
+
+.banner h2 {
+  font-size: 42px;
+  margin-bottom: 16px;
+}
+
+.banner p {
+  font-size: 18px;
+  line-height: 1.6;
 }
 
 .banner-image img {
