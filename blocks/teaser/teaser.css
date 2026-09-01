@@ -65,7 +65,7 @@
   content: "🌿 ";
 }
 
-@media (max-width: 768px) {
+@media (width <= 768px) {
   .teaser {
     grid-template-columns: 1fr;
     grid-template-areas:
