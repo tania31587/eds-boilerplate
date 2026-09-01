@@ -6,7 +6,7 @@
   align-items: center;
 }
 
-.columns.example > div > div {
+.columns.example>div {
   background-color: gray;
   color: red;
 }
