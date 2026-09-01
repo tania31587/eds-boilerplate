@@ -255,13 +255,11 @@ export default async function decorate(block) {
         ].join(' ');
       }
 
-      pageInformation.textContent =
-        `Page ${currentPage} of ${totalPages}`;
+      pageInformation.textContent = `Page ${currentPage} of ${totalPages}`;
 
       previousButton.disabled = currentPage === 1;
 
-      nextButton.disabled =
-        currentPage >= totalPages || items.length < PAGE_SIZE;
+      nextButton.disabled = currentPage >= totalPages || items.length < PAGE_SIZE;
 
       /*
        * Hide pagination when there is only one page.
@@ -274,13 +272,13 @@ export default async function decorate(block) {
         return;
       }
 
-      status.textContent =
-        'Unable to load the spreadsheet content.';
+      // Display a user-friendly error message
+      status.textContent = 'Unable to load the spreadsheet content.';
 
       status.classList.add('plant-list-status-error');
       pagination.hidden = true;
 
-      console.error('Plant list loading error:', error);
+      // console.err*r('Plant list loading error:', err*r);
     } finally {
       list.removeAttribute('aria-busy');
     }
