@@ -6,11 +6,6 @@
   align-items: center;
 }
 
-.columns.example>div {
-  background-color: rgb(254, 254, 254);
-  color: black;
-}
-
 .columns img {
   width: 100%;
   height: 300px;
@@ -27,6 +22,11 @@
 
 .columns>div>.columns-img-col img {
   display: block;
+}
+
+.columns.example>div {
+  background-color: rgb(254 254 254);
+  color: black;
 }
 
 @media (width >=900px) {

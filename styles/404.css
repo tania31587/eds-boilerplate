@@ -3,6 +3,7 @@ main.error {
   --error-mint: #d8f0e5;
   --error-coral: #ed6a5a;
   --error-sun: #f4c95d;
+  
   position: relative;
   box-sizing: border-box;
   display: grid;
