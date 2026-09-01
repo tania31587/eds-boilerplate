@@ -1,0 +1,139 @@
+main.error {
+  --error-ink: #143642;
+  --error-mint: #d8f0e5;
+  --error-coral: #ed6a5a;
+  --error-sun: #f4c95d;
+  position: relative;
+  box-sizing: border-box;
+  display: grid;
+  min-height: calc(100vh - var(--nav-height));
+  padding: 48px 16px;
+  overflow: hidden;
+  background-color: #f7fbf9;
+  background-image: linear-gradient(135deg, transparent 0 49.5%, rgb(216 240 229 / 60%) 49.5% 50.5%, transparent 50.5% 100%);
+  background-size: 36px 36px;
+  place-items: center;
+}
+
+main.error::before,
+main.error::after {
+  position: absolute;
+  z-index: 0;
+  width: clamp(190px, 26vw, 360px);
+  aspect-ratio: 1;
+  border: 18px solid var(--error-sun);
+  border-radius: 50%;
+  content: '';
+}
+
+main.error::before {
+  top: -130px;
+  right: -85px;
+}
+
+main.error::after {
+  bottom: -150px;
+  left: -110px;
+  border-color: var(--error-coral);
+}
+
+main.error .section {
+  position: relative;
+  z-index: 1;
+  box-sizing: border-box;
+  width: min(100%, 720px);
+  margin: 0;
+  border: 1px solid rgb(20 54 66 / 15%);
+  border-radius: 8px;
+  padding: clamp(32px, 6vw, 72px);
+  background: rgb(255 255 255 / 88%);
+  box-shadow: 12px 12px 0 var(--error-ink);
+  text-align: center;
+}
+
+main.error .error-number {
+  display: block;
+  width: min(100%, 540px);
+  height: auto;
+  margin: 0 auto;
+  overflow: visible;
+}
+
+main.error .error-number text {
+  fill: var(--error-ink);
+  font-family: var(--heading-font-family);
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: 0;
+  stroke: var(--error-ink);
+  stroke-width: 0.12px;
+  paint-order: stroke fill;
+}
+
+main.error .error-message {
+  margin: 16px 0 24px;
+  color: var(--error-ink);
+  font-size: clamp(28px, 5vw, 46px);
+  letter-spacing: 0;
+  line-height: 1;
+}
+
+main.error .button-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin: 0;
+}
+
+main.error a.button:any-link {
+  min-width: 140px;
+  border: 2px solid var(--error-ink);
+  border-radius: 4px;
+  padding: 0.7em 1.2em;
+  background-color: var(--error-ink);
+  color: white;
+  font-weight: 700;
+  transition: transform 180ms ease, box-shadow 180ms ease, background-color 180ms ease, color 180ms ease;
+}
+
+main.error a.error-button-back:any-link {
+  background-color: var(--error-mint);
+  color: var(--error-ink);
+}
+
+main.error a.button:hover,
+main.error a.button:focus-visible {
+  background-color: var(--error-coral);
+  box-shadow: 5px 5px 0 var(--error-sun);
+  color: var(--error-ink);
+  text-decoration: none;
+  transform: translate(-3px, -3px);
+}
+
+main.error a.button:focus-visible {
+  outline: 3px solid var(--error-sun);
+  outline-offset: 3px;
+}
+
+@media (width < 600px) {
+  main.error {
+    padding: 32px 16px;
+  }
+
+  main.error .section {
+    padding: 36px 24px;
+    box-shadow: 7px 7px 0 var(--error-ink);
+  }
+
+  main.error .button-container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  main.error a.button:any-link {
+    transition: none;
+  }
+}

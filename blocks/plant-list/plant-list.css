@@ -1,0 +1,182 @@
+.plant-list {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.plant-list-status {
+  margin: 0 0 24px;
+  color: #555;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.plant-list-status-error {
+  padding: 16px;
+  color: #8b0000;
+  background-color: #ffecec;
+  border: 1px solid #e6a6a6;
+  border-radius: 8px;
+}
+
+.plant-list-items {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 24px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.plant-list-item {
+  min-width: 0;
+}
+
+.plant-list-card {
+  display: flex;
+  height: 100%;
+  min-height: 280px;
+  flex-direction: column;
+  padding: 22px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgb(0 0 0 / 8%);
+  box-sizing: border-box;
+}
+
+.plant-list-card-header {
+  margin-bottom: 16px;
+}
+
+.plant-list-card-title {
+  margin: 0 0 10px;
+  color: #222;
+  font-size: 1.45rem;
+  line-height: 1.25;
+}
+
+.plant-list-card-category {
+  display: inline-block;
+  padding: 5px 11px;
+  color: #1f5d2e;
+  background-color: #e5f4e9;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.plant-list-card-description {
+  flex: 1;
+  margin: 0 0 18px;
+  color: #555;
+  line-height: 1.55;
+}
+
+.plant-list-card-price {
+  margin: 0 0 18px;
+  color: #1d1d1d;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+.plant-list-card-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 12px 20px;
+
+  background: #1e88e5;
+  color: #fff !important;
+
+  border-radius: 8px;
+  text-decoration: none;
+
+  font-weight: 600;
+  font-size: 16px;
+
+  transition: all 0.3s ease;
+}
+
+.plant-list-card-cta:hover {
+  background: #1565c0;
+  color: #fff;
+}
+
+.plant-list-card-cta::before {
+  content: '';
+
+  width: 12px;
+  height: 12px;
+
+  background-color: #fff;
+
+  border-radius: 0 100% 0 100%;
+  transform: rotate(-45deg);
+
+  flex-shrink: 0;
+}
+
+.plant-list-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  margin-top: 32px;
+}
+
+.plant-list-pagination-button {
+  min-width: 110px;
+  padding: 11px 18px;
+  color: #fff;
+  background-color: #087f23;
+  border: 0;
+  border-radius: 6px;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 700;
+}
+
+.plant-list-pagination-button:hover:not(:disabled) {
+  background-color: #05651a;
+}
+
+.plant-list-pagination-button:disabled {
+  color: #777;
+  background-color: #ddd;
+  cursor: not-allowed;
+}
+
+.plant-list-page-information {
+  min-width: 120px;
+  color: #333;
+  font-weight: 700;
+  text-align: center;
+}
+
+.plant-list-card-cta:focus-visible,
+.plant-list-pagination-button:focus-visible {
+  outline: 3px solid #111;
+  outline-offset: 3px;
+}
+
+@media (max-width: 1024px) {
+  .plant-list-items {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .plant-list-items {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .plant-list-items {
+    grid-template-columns: 1fr;
+  }
+
+  .plant-list-pagination {
+    flex-wrap: wrap;
+  }
+}
