@@ -1,0 +1,3 @@
+# Catalog screenshots (catalog/**/*.jpg) are stored as normal git files, not Git LFS:
+# the GitHub repository's LFS is unavailable (over quota or disabled), which blocked pushes.
+catalog/**/*.jpg binary

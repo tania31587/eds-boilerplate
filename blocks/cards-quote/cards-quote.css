@@ -1,0 +1,226 @@
+/* cards-quote: values measured from jackson.com .background-container > .cta-icon-card */
+
+/*
+ * the beige panel fills the source text column: outer margin
+ * max(20px, (100% - 1480px) / 2), plus inner gutters 0 -> 82/80 (526px) -> 150/80 (1297px)
+ */
+.cards-quote {
+  --cards-quote-outer: max(20px, calc((100% - var(--content-max-width)) / 2));
+
+  box-sizing: border-box;
+  margin: 20px var(--cards-quote-outer) 0;
+  padding: 45px 90px;
+  background-color: #f1ece9;
+  color: #000;
+  font-family: Apercu, sans-serif, verdana;
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 30px;
+}
+
+.cards-quote > ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 15px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cards-quote .cards-quote-card {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: calc(50% - 45px);
+  margin: 20px;
+  padding: 10px;
+}
+
+.cards-quote .cards-quote-card-image {
+  width: 100%;
+  max-width: 358px;
+  margin: 0 auto;
+  line-height: 0;
+}
+
+.cards-quote .cards-quote-card-image picture {
+  display: block;
+}
+
+.cards-quote .cards-quote-card-image img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.cards-quote .cards-quote-card-body {
+  box-sizing: border-box;
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  width: 100%;
+  padding: 10px;
+}
+
+.cards-quote .cards-quote-card-title {
+  margin: 0;
+  color: #5c2642;
+  font-family: 'Superior Title', georgia, serif;
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 34px;
+  text-align: center;
+}
+
+.cards-quote .cards-quote-card-description {
+  flex-grow: 1;
+  margin-top: 15px;
+}
+
+.cards-quote .cards-quote-card-description > * {
+  margin: 0;
+  color: #000;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 30px;
+  text-align: center;
+}
+
+.cards-quote .cards-quote-card-description > * + * {
+  margin-top: 15px;
+}
+
+.cards-quote sup {
+  position: relative;
+  font-size: 75%;
+  line-height: 0;
+  vertical-align: super;
+}
+
+.cards-quote .cards-quote-card-description a:any-link {
+  color: #5c2642;
+  text-decoration: underline;
+}
+
+.cards-quote .cards-quote-card-cta {
+  position: relative;
+  width: 100%;
+  margin-top: 15px;
+  text-align: center;
+}
+
+.cards-quote .cards-quote-card-cta a:any-link {
+  position: relative;
+  display: inline-block;
+  padding: 3px 0 0 22px;
+  color: #000;
+  font-family: Apercu, sans-serif, verdana;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 30px;
+  text-transform: uppercase;
+  text-decoration: underline 1px;
+}
+
+.cards-quote .cards-quote-card-cta a:visited {
+  color: #5c2642;
+}
+
+.cards-quote .cards-quote-card-cta a:any-link:hover,
+.cards-quote .cards-quote-card-cta a:any-link:focus {
+  text-decoration-thickness: 2px;
+}
+
+/* red circled arrow (Font Awesome "arrow-circle-right" regular on the source) */
+.cards-quote .cards-quote-card-cta a:any-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 30px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Ccircle cx='10' cy='10' r='9' fill='none' stroke='%23eb0028' stroke-width='1.6'/%3E%3Cpath fill='%23eb0028' d='M5.2 8.9h5.2V6.1l4.4 3.9-4.4 3.9v-2.8H5.2z'/%3E%3C/svg%3E") center 9px / 17.5px 17.5px no-repeat;
+}
+
+@media (width >= 526px) {
+  .cards-quote {
+    margin-right: calc(var(--cards-quote-outer) + 80px);
+    margin-left: calc(var(--cards-quote-outer) + 82px);
+  }
+}
+
+@media (width >= 1297px) {
+  .cards-quote {
+    margin-left: calc(var(--cards-quote-outer) + 150px);
+  }
+}
+
+@media (width <= 1200px) {
+  .cards-quote .cards-quote-card-image img {
+    width: 80%;
+  }
+}
+
+@media (width <= 1128px) {
+  .cards-quote {
+    padding: 45px 20px;
+  }
+}
+
+@media (width <= 900px) {
+  .cards-quote .cards-quote-card {
+    width: calc(100% - 40px);
+  }
+}
+
+@media (width <= 700px) {
+  .cards-quote .cards-quote-card-image img {
+    width: 60%;
+  }
+}
+
+@media (width <= 500px) {
+  .cards-quote .cards-quote-card-cta a:any-link {
+    box-sizing: border-box;
+    width: 100%;
+  }
+}
+
+@media (width <= 480px) {
+  .cards-quote .cards-quote-card-image img {
+    width: 50%;
+  }
+}
+
+/* source drops its root font size to 8px (x0.8) at 470px */
+@media (width <= 470px) {
+  .cards-quote {
+    margin-top: 0;
+    padding: 5px 20px;
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .cards-quote .cards-quote-card-title {
+    font-size: 19.2px;
+    line-height: 27.2px;
+  }
+
+  .cards-quote .cards-quote-card-description > *,
+  .cards-quote .cards-quote-card-cta a:any-link {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .cards-quote .cards-quote-card-cta a:any-link::before {
+    height: 24px;
+    background-position: center 6px;
+    background-size: 14px 14px;
+  }
+}

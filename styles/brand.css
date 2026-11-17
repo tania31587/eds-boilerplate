@@ -1,0 +1,101 @@
+/*
+ * Jackson brand tokens — extracted from www.jackson.com
+ * (computed styles of /your-financial-future/how-to-plan-for-retirement.html).
+ * Mobile-first: base values = phones (the source scales its type to 80% below 471px).
+ */
+
+:root {
+  /* colors */
+  --background-color: #fff;
+  --text-color: #000;
+  --link-color: #eb0028;
+  --link-hover-color: #eb0028;
+  --heading-color: #5c2642;
+  --title-color: #eb0028;
+  --plum-color: #3b052e;
+  --beige-color: #dbcfc7;
+  --light-beige-color: #f1ece9;
+  --light-color: #f8f8f8;
+  --dark-color: #474546;
+  --disclosure-color: #666;
+  --disclosure-strong-color: #333;
+
+  /* fonts */
+  --body-font-family: apercu, sans-serif, verdana;
+  --heading-font-family: 'Superior Title', georgia, serif;
+  --disclosure-font-family: roboto, sans-serif;
+
+  /* body sizes */
+  --body-font-size-m: 16px;
+  --body-line-height-m: 24px;
+  --body-font-size-s: 14px;
+  --body-line-height-s: 20.8px;
+  --list-font-size: 16px;
+  --list-line-height: 26px;
+  --list-margin-bottom: 8px;
+  --sup-font-size: 12px;
+  --disclosure-font-size: 12.8px;
+  --disclosure-line-height: 16px;
+  --disclosure-strong-font-size: 14.4px;
+  --disclosure-strong-line-height: 17.6px;
+  --disclosure-sup-font-size: 9.6px;
+  --link-underline: 0.8px;
+
+  /* heading sizes */
+  --heading-font-size-xxl: 36px;
+  --heading-line-height-xxl: 44.8px;
+  --heading-font-size-xl: 32px;
+  --heading-line-height-xl: 40px;
+  --heading-font-size-l: 27.2px;
+  --heading-line-height-l: 35.2px;
+  --heading-font-size-m: 20px;
+  --heading-font-size-s: 18px;
+  --heading-font-size-xs: 16px;
+
+  /* spacing */
+  --content-max-width: 1480px;
+  --section-spacing: 32px;
+  --section-spacing-tight: 45px;
+}
+
+@media (width >= 471px) {
+  :root {
+    --body-font-size-m: 20px;
+    --body-line-height-m: 30px;
+    --body-font-size-s: 19px;
+    --body-line-height-s: 26px;
+    --list-font-size: 20px;
+    --list-margin-bottom: 10px;
+    --sup-font-size: 15px;
+    --disclosure-font-size: 16px;
+    --disclosure-line-height: 20px;
+    --disclosure-strong-font-size: 18px;
+    --disclosure-strong-line-height: 22px;
+    --disclosure-sup-font-size: 12px;
+    --link-underline: 1px;
+    --heading-font-size-xxl: 46px;
+    --heading-line-height-xxl: 56px;
+    --heading-font-size-xl: 40px;
+    --heading-line-height-xl: 50px;
+    --heading-font-size-l: 34px;
+    --heading-line-height-l: 44px;
+  }
+}
+
+@media (width >= 701px) {
+  :root {
+    --section-spacing: 52px;
+  }
+}
+
+@media (width >= 976px) {
+  :root {
+    --section-spacing: 72px;
+  }
+}
+
+@media (width >= 1201px) {
+  :root {
+    --section-spacing: 92px;
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "type": "da",
+  "sites": {
+    "eds-boilerplate": {
+      "previewOrg": "tania31587",
+      "previewSite": "eds-boilerplate",
+      "contentHostUrl": "https://content.da.live/tania31587/eds-boilerplate/",
+      "libraryUrl": "https://main--sta-boilerplate--aemdemos.aem.page/tools/sidekick/library.json"
+    }
+  }
+}

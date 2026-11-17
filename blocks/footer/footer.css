@@ -1,20 +1,277 @@
-footer {
-  background-color: var(--light-color);
-  font-size: var(--body-font-size-xs);
+/* Footer — Jackson global footer (values measured from www.jackson.com)
+ * Mobile-first. Base rules = phones; the source changes layout at
+ * 471px (type scale), 570px (social icons beside copyright) and
+ * 767px (desktop link columns + single bottom row).
+ */
+
+footer .footer {
+  /* the source scales footer type to 80% below 471px */
+  --footer-scale: 0.8;
+
+  margin-top: 100px;
+  background-color: #dbcfc7;
+  font-family: Apercu, sans-serif, verdana;
+  color: #474546;
 }
 
-footer .footer > div {
-  margin: auto;
-  max-width: 1200px;
-  padding: 40px 24px 24px;
-}
-
-footer .footer p {
+footer .footer p,
+footer .footer ul {
   margin: 0;
+  padding: 0;
 }
 
-@media (width >= 900px) {
-  footer .footer > div {
-    padding: 40px 32px 24px;
+footer .footer ul {
+  list-style: none;
+}
+
+footer .footer .footer-inner {
+  box-sizing: border-box;
+  max-width: 1366px;
+  margin: 0 auto;
+  padding: 20px 20px 30px;
+}
+
+/* link columns: content-sized, wrapping on small screens */
+footer .footer .footer-columns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 0 0 25px 30px;
+}
+
+footer .footer .footer-column {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+footer .footer .footer-column-title {
+  margin: 0 0 10px;
+  font-family: Apercu, sans-serif, verdana;
+  font-size: calc(16px * var(--footer-scale));
+  line-height: calc(20px * var(--footer-scale));
+  font-weight: 600;
+  color: #474546;
+}
+
+footer .footer .footer-column li {
+  font-size: calc(16px * var(--footer-scale));
+  line-height: calc(20px * var(--footer-scale));
+}
+
+footer .footer .footer-column li + li {
+  margin-top: 10px;
+}
+
+footer .footer a:any-link {
+  color: inherit;
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+}
+
+footer .footer a:hover {
+  color: inherit;
+  text-decoration-thickness: 2px;
+}
+
+/* divider */
+footer .footer hr {
+  height: 0;
+  margin: 30px 0;
+  border: 0;
+  border-top: 1px solid rgb(0 0 0 / 10%);
+  background-color: #3b052e;
+}
+
+/* copyright, legal links, social icons: stacked and centred on phones */
+footer .footer .footer-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+footer .footer .footer-legal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 300px;
+  max-width: 100%;
+  font-size: calc(13px * var(--footer-scale));
+  line-height: calc(17px * var(--footer-scale));
+  text-align: center;
+}
+
+footer .footer .footer-copyright {
+  margin-right: 10px;
+}
+
+footer .footer .footer-legal-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin: 14px 0 25px;
+}
+
+footer .footer .footer-social {
+  display: flex;
+  gap: 10px;
+}
+
+footer .footer a.footer-social-link:any-link {
+  display: block;
+  color: #474546;
+  text-decoration: none;
+}
+
+footer .footer a.footer-social-link:hover {
+  color: #eb0028;
+}
+
+footer .footer .footer-social-icon {
+  position: relative;
+  display: block;
+  box-sizing: border-box;
+  width: 32px;
+  height: 32px;
+  border: 2px solid currentcolor;
+}
+
+footer .footer .footer-social-icon::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: currentcolor;
+  mask: var(--icon) center / auto 22px no-repeat;
+}
+
+footer .footer .footer-social-icon img {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+}
+
+/* disclosures band */
+footer .footer .footer-secondary {
+  background-color: #474546;
+  font-family: roboto, sans-serif;
+  font-size: calc(13px * var(--footer-scale));
+  line-height: calc(17px * var(--footer-scale));
+  color: #fff;
+}
+
+footer .footer .footer-secondary .footer-inner {
+  padding: 30px 20px;
+}
+
+footer .footer .footer-disclosures::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+footer .footer .footer-badge {
+  float: right;
+  margin: 0 0 25px 25px;
+}
+
+footer .footer .footer-badge a:any-link,
+footer .footer .footer-badge a:hover {
+  text-decoration: none;
+}
+
+footer .footer .footer-badge img {
+  display: block;
+  width: 171px;
+  height: 88px;
+}
+
+footer .footer .footer-notice strong {
+  display: inline-block;
+  box-sizing: border-box;
+  max-width: 100%;
+  padding: 8px 7.5px;
+  border: 1px solid #fff;
+  font-weight: 700;
+  text-align: center;
+}
+
+/* the source pads this notice with non-breaking spaces (it affects how lines wrap) */
+footer .footer .footer-notice strong::before {
+  content: '\00a0 \00a0 \00a0 ';
+}
+
+footer .footer .footer-notice strong::after {
+  content: '\00a0 \00a0 \00a0\00a0';
+}
+
+footer .footer .footer-disclosure-text {
+  font-weight: 300;
+}
+
+footer .footer .footer-notice + .footer-disclosure-text {
+  margin-top: 15px;
+}
+
+footer .footer .footer-disclosure-text + .footer-disclosure-text {
+  margin-top: 20px;
+}
+
+footer .footer .footer-secondary a:any-link {
+  font-weight: 500;
+}
+
+/* breakpoint-exception: the source restores full-size footer type at 471px */
+@media (width >= 471px) {
+  footer .footer {
+    --footer-scale: 1;
+  }
+
+  footer .footer .footer-legal {
+    width: 330px;
+  }
+}
+
+/* breakpoint-exception: the source moves the social icons beside the copyright block at 570px */
+@media (width >= 570px) {
+  footer .footer .footer-bottom {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+  }
+}
+
+/* breakpoint-exception: the source switches to its desktop footer layout at 767px */
+@media (width >= 767px) {
+  footer .footer .footer-columns {
+    flex-wrap: nowrap;
+    width: 60%;
+    padding: 0;
+  }
+
+  footer .footer .footer-column {
+    flex: 0 1 30%;
+  }
+
+  footer .footer .footer-bottom {
+    justify-content: space-between;
+    min-height: 32px;
+  }
+
+  footer .footer .footer-copyright {
+    margin-right: 0;
+  }
+
+  footer .footer .footer-legal {
+    flex-flow: row wrap;
+    gap: 10px;
+    width: auto;
+    text-align: left;
+  }
+
+  footer .footer .footer-legal-links {
+    margin: 0;
   }
 }

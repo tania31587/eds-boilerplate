@@ -1,0 +1,177 @@
+/* cards-promo: values measured from jackson.com .promo-card-wrapper > .promo-card */
+
+/* source layout container (.content-area): 1480px centred column, same as the
+   section's centered default content; gutters 0 -> 32px (651px) -> 90px (1297px) */
+.cards-promo {
+  box-sizing: border-box;
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+  padding: 0;
+}
+
+.cards-promo > ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 15px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cards-promo .cards-promo-card {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: calc(50% - 45px);
+  margin: 20px;
+  font-family: Apercu, sans-serif, verdana;
+  font-size: 19px;
+  font-weight: 400;
+  line-height: 26px;
+}
+
+.cards-promo .cards-promo-card-image {
+  position: relative;
+  width: 100%;
+  line-height: 0;
+}
+
+.cards-promo .cards-promo-card-image picture {
+  display: block;
+}
+
+.cards-promo .cards-promo-card-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 605 / 283;
+  object-fit: cover;
+}
+
+.cards-promo .cards-promo-card-body {
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 30px 30px 100px;
+  background-color: #3b052e;
+  text-align: center;
+}
+
+.cards-promo .cards-promo-card-body > * {
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0;
+  padding: 5px;
+}
+
+/* beats the section's `.section.centered h3` padding so the 5px cell padding holds */
+.cards-promo .cards-promo-card-body > .cards-promo-card-title {
+  padding: 5px;
+  color: #dbcfc7;
+  font-family: 'Superior Title', georgia, serif;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 36px;
+}
+
+.cards-promo .cards-promo-card-title strong {
+  font-weight: inherit;
+}
+
+.cards-promo .cards-promo-card-description > * {
+  margin: 0;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 26px;
+}
+
+.cards-promo .cards-promo-card-description > * + * {
+  margin-top: 10px;
+}
+
+.cards-promo sup {
+  position: relative;
+  font-size: 75%;
+  line-height: 0;
+  vertical-align: super;
+}
+
+.cards-promo .cards-promo-card-description a:any-link {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.cards-promo .cards-promo-card-body > .cards-promo-card-cta {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  width: 100%;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.cards-promo .cards-promo-card-cta a:any-link {
+  box-sizing: border-box;
+  display: inline-block;
+  max-width: 100%;
+  margin: 5px 0;
+  padding: 8px 25px;
+  border: 2px solid transparent;
+  border-radius: 0;
+  background-color: #eb0028;
+  color: #fff;
+  font-family: Apercu, sans-serif, verdana;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 26px;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  white-space: normal;
+}
+
+.cards-promo .cards-promo-card-cta a:any-link:hover,
+.cards-promo .cards-promo-card-cta a:any-link:focus {
+  border-color: #474546;
+  background-color: #5c2642;
+  color: #fff;
+  text-decoration: none;
+}
+
+@media (width <= 900px) {
+  .cards-promo .cards-promo-card {
+    width: calc(100% - 40px);
+  }
+}
+
+@media (width <= 500px) {
+  .cards-promo .cards-promo-card-cta a:any-link {
+    width: 100%;
+  }
+}
+
+/* source drops its root font size to 8px at 470px: px sizes stay, rem line heights shrink */
+@media (width >= 651px) {
+  .cards-promo {
+    padding: 0 32px;
+  }
+}
+
+@media (width >= 1297px) {
+  .cards-promo {
+    padding: 0 90px;
+  }
+}
+
+@media (width <= 470px) {
+  .cards-promo .cards-promo-card-description > *,
+  .cards-promo .cards-promo-card-cta a:any-link {
+    line-height: 20.8px;
+  }
+}

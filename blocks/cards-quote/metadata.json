@@ -1,0 +1,18 @@
+{
+  "variantName": "cards-quote",
+  "baseBlock": "cards",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": [
+    "Beige (#f1ece9) panel, max 1078px, padding 45px 90px (20px sides at 1128px and below)",
+    "Two columns of cards (calc(50% - 45px), 20px margins), one column at 900px and below",
+    "Circular portrait up to 358px, centred serif quotation (Superior Title 24px/34px, #5c2642), centred 20px/30px body, uppercase underlined black link with a red circled arrow",
+    "Type scale drops by 0.8 at 470px and below"
+  ],
+  "contentPattern": [
+    "One row per card. Cell 1: portrait picture. Cell 2: quotation as a paragraph (first non-link element), description paragraph(s), and a last paragraph holding only a link (the \"Learn more\" CTA). Missing image, description or link are tolerated."
+  ],
+  "options": [],
+  "memberVariantIds": [],
+  "usage": "Persona/testimonial-style cards that each link to a detail page, e.g. retirement concern scenarios. Source: https://www.jackson.com/your-financial-future/how-to-plan-for-retirement.html",
+  "reuseGuidance": "Use when each card leads with a portrait and a quotation. For image + title + button promos use cards-promo."
+}

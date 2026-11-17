@@ -1,0 +1,17 @@
+{
+  "variantName": "hero-split",
+  "baseBlock": "hero",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": [
+    "Full-bleed split hero (max 1480px): beige (#f1ece9) text panel left, photo flush right at its natural ratio (620x275 on the source)",
+    "H1 in the Superior Title serif, 46px/56px, red #eb0028; panel padding 25px 40px, text vertically centred",
+    "Photo hidden at 975px and below; heading scales to 36.8px/44.8px at 470px and below"
+  ],
+  "contentPattern": [
+    "Row 1: picture. Row 2: H1 title, optional subheading paragraph, optional link. Cells may be merged or split; the picture is found anywhere and everything else goes to the text panel in authored order."
+  ],
+  "options": [],
+  "memberVariantIds": [],
+  "usage": "Page-top hero for article/subpage templates: page title beside a supporting photo. Source: https://www.jackson.com/your-financial-future/how-to-plan-for-retirement.html",
+  "reuseGuidance": "Use for any subpage title hero with one photo. Use the base hero for full-background-image heroes."
+}

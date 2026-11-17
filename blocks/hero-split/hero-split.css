@@ -1,0 +1,84 @@
+/* hero-split: values measured from jackson.com .subpage-herospace-block */
+
+/* full-bleed up to 1480px, centred beyond that (wrapper is full width via styles.css) */
+.hero-split {
+  display: flex;
+  max-width: 1480px;
+  margin: 0 auto;
+}
+
+.hero-split .hero-split-content {
+  box-sizing: border-box;
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  justify-content: center;
+  padding: 25px 40px;
+  background-color: #f1ece9;
+  color: #5c2642;
+  font-family: Apercu, sans-serif, verdana;
+  font-size: 19px;
+  font-weight: 400;
+  line-height: 26px;
+  text-align: left;
+}
+
+.hero-split .hero-split-content > * {
+  margin: 0;
+}
+
+.hero-split .hero-split-content h1,
+.hero-split .hero-split-content h2,
+.hero-split .hero-split-content .hero-split-title {
+  margin: 0;
+  color: #eb0028;
+  font-family: 'Superior Title', georgia, serif;
+  font-size: 46px;
+  font-weight: 700;
+  line-height: 56px;
+}
+
+.hero-split .hero-split-content a:any-link {
+  color: #5c2642;
+  text-decoration: underline;
+}
+
+.hero-split .hero-split-image {
+  flex: 0 0 auto;
+  line-height: 0;
+}
+
+.hero-split .hero-split-image picture {
+  display: block;
+  height: 100%;
+}
+
+.hero-split .hero-split-image img {
+  display: block;
+  width: auto;
+  max-width: none;
+  height: 100%;
+  min-height: 275px;
+  object-fit: cover;
+}
+
+@media (width <= 975px) {
+  .hero-split .hero-split-image {
+    display: none;
+  }
+}
+
+/* source drops its root font size to 8px (x0.8) at 470px */
+@media (width <= 470px) {
+  .hero-split .hero-split-content {
+    font-size: 15.2px;
+    line-height: 20.8px;
+  }
+
+  .hero-split .hero-split-content h1,
+  .hero-split .hero-split-content h2,
+  .hero-split .hero-split-content .hero-split-title {
+    font-size: 36.8px;
+    line-height: 44.8px;
+  }
+}

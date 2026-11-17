@@ -1,0 +1,140 @@
+{
+  "templates": [
+    {
+      "name": "your-financial-future",
+      "urls": [
+        "https://www.jackson.com/your-financial-future/how-to-plan-for-retirement.html"
+      ],
+      "representativeUrl": "https://www.jackson.com/your-financial-future/how-to-plan-for-retirement.html",
+      "description": "Your Financial Future article pages: split hero, intro text, quote cards on a beige panel, annuity copy, promo cards and disclosures",
+      "blocks": [
+        {
+          "name": "hero-split",
+          "instances": [
+            ".subpage-herospace-block"
+          ]
+        },
+        {
+          "name": "cards-quote",
+          "instances": [
+            ".cta-icon-card-wrapper"
+          ]
+        },
+        {
+          "name": "cards-promo",
+          "instances": [
+            ".promo-card-wrapper"
+          ]
+        }
+      ],
+      "urlPattern": "/your-financial-future/*",
+      "sections": [
+        {
+          "id": "section-1",
+          "name": "Hero",
+          "selector": [
+            ".body-content .herospace",
+            ".content-wrapper > .herospace"
+          ],
+          "style": null,
+          "blocks": [
+            "hero-split"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-2",
+          "name": "Retirement planning intro",
+          "selector": [
+            ".content-wrapper > .herospace + .header > .content-area > .subpage-header-block"
+          ],
+          "style": null,
+          "blocks": [],
+          "defaultContent": [
+            ".content-wrapper > .herospace + .header > .content-area > .subpage-header-block .title",
+            ".content-wrapper > .herospace + .header > .content-area > .subpage-header-block .description"
+          ]
+        },
+        {
+          "id": "section-3",
+          "name": "Retirement concern cards",
+          "selector": [
+            ".content-wrapper > .herospace + .header .child-items .background-container",
+            ".child-items .background-container"
+          ],
+          "style": "light-beige",
+          "blocks": [
+            "cards-quote"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-4",
+          "name": "How annuities help + talk to a professional",
+          "selector": [
+            ".content-wrapper > .herospace + .header + .header"
+          ],
+          "style": null,
+          "blocks": [],
+          "defaultContent": [
+            ".content-wrapper > .herospace + .header + .header .subpage-header-block",
+            ".content-wrapper > .herospace + .header + .header + .header .subpage-header-block"
+          ]
+        },
+        {
+          "id": "section-4b",
+          "name": "Annuity risk disclosure",
+          "selector": [
+            ".content-wrapper > .header + .disclosure"
+          ],
+          "style": "risk-disclosure",
+          "blocks": [],
+          "defaultContent": [
+            ".content-wrapper > .header + .disclosure"
+          ]
+        },
+        {
+          "id": "section-5",
+          "name": "Resources",
+          "selector": [
+            ".content-wrapper > .disclosure + .layout-container"
+          ],
+          "style": "centered",
+          "blocks": [
+            "cards-promo"
+          ],
+          "defaultContent": [
+            ".content-wrapper > .disclosure + .layout-container > .content-area > h3"
+          ]
+        },
+        {
+          "id": "section-6",
+          "name": "Footnotes",
+          "selector": [
+            ".content-wrapper > .layout-container + .disclosure"
+          ],
+          "style": "disclosure",
+          "blocks": [],
+          "defaultContent": [
+            ".content-wrapper > .layout-container + .disclosure"
+          ]
+        },
+        {
+          "id": "section-7",
+          "name": "Legal disclosures",
+          "selector": [
+            ".content-wrapper > .layout-container + .disclosure + .disclosure"
+          ],
+          "style": "disclosure, separator",
+          "blocks": [],
+          "defaultContent": [
+            ".content-wrapper > .layout-container + .disclosure + .disclosure"
+          ]
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "projectType": "da"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "variantName": "cards-promo",
+  "baseBlock": "cards",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": [
+    "Two cards per row (calc(50% - 45px), 20px margins), centred; one per row at 900px and below",
+    "Full-width photo on top (605:283), dark plum (#3b052e) text panel below, padding 30px 30px 100px, centred",
+    "Title in Superior Title 24px/36px taupe #dbcfc7; description Apercu 16px/26px semi-bold white",
+    "Red (#eb0028) square uppercase button pinned 20px from the panel bottom; hover plum #5c2642 with dark border"
+  ],
+  "contentPattern": [
+    "One row per card. Cell 1: picture. Cell 2: title (H3 or bold paragraph), description paragraph(s), last paragraph holding only a link (rendered as the button)."
+  ],
+  "options": [],
+  "memberVariantIds": [],
+  "usage": "Resource/promo tiles linking to hub pages (e.g. educational resources, calculators). Source: https://www.jackson.com/your-financial-future/how-to-plan-for-retirement.html",
+  "reuseGuidance": "Use for image-topped promo tiles with a single button. For quotation/persona cards use cards-quote."
+}

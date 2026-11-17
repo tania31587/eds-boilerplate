@@ -1,3 +1,5 @@
+@import url('brand.css');
+
 /*
  * Copyright 2020 Adobe. All rights reserved.
  * This file is licensed to you under the Apache License, Version 2.0 (the "License");
@@ -11,62 +13,20 @@
  */
 
 :root {
-  /* colors */
-  --background-color: white;
-  --light-color: #f8f8f8;
-  --dark-color: #505050;
-  --text-color: #131313;
-  --link-color: #3b63fb;
-  --link-hover-color: #1d3ecf;
-
-  /* fonts */
-  --body-font-family: roboto, roboto-fallback, sans-serif;
-  --heading-font-family: roboto-condensed, roboto-condensed-fallback, sans-serif;
-
-  /* body sizes */
-  --body-font-size-m: 22px;
-  --body-font-size-s: 19px;
-  --body-font-size-xs: 17px;
-
-  /* heading sizes */
-  --heading-font-size-xxl: 55px;
-  --heading-font-size-xl: 44px;
-  --heading-font-size-l: 34px;
-  --heading-font-size-m: 27px;
-  --heading-font-size-s: 24px;
-  --heading-font-size-xs: 22px;
-
-  /* nav height */
-  --nav-height: 64px;
+  /* nav height (Jackson masthead: stacked phone bar) */
+  --nav-height: 203px;
 }
 
-/* fallback fonts */
-@font-face {
-  font-family: roboto-condensed-fallback;
-  size-adjust: 88.82%;
-  src: local('Arial');
-}
-
-@font-face {
-  font-family: roboto-fallback;
-  size-adjust: 99.529%;
-  src: local('Arial');
-}
-
-@media (width >= 900px) {
+/* Jackson masthead heights follow the source site's header breakpoints */
+@media (width >= 481px) {
   :root {
-    /* body sizes */
-    --body-font-size-m: 18px;
-    --body-font-size-s: 16px;
-    --body-font-size-xs: 14px;
+    --nav-height: 156px;
+  }
+}
 
-    /* heading sizes */
-    --heading-font-size-xxl: 45px;
-    --heading-font-size-xl: 36px;
-    --heading-font-size-l: 28px;
-    --heading-font-size-m: 22px;
-    --heading-font-size-s: 20px;
-    --heading-font-size-xs: 18px;
+@media (width >= 646px) {
+  :root {
+    --nav-height: 205px;
   }
 }
 
@@ -77,7 +37,7 @@ body {
   color: var(--text-color);
   font-family: var(--body-font-family);
   font-size: var(--body-font-size-m);
-  line-height: 1.6;
+  line-height: var(--body-line-height-m);
 }
 
 body.appear {
@@ -86,6 +46,7 @@ body.appear {
 
 header {
   height: var(--nav-height);
+  background-color: #dbcfc7;
 }
 
 header .header,
@@ -104,17 +65,29 @@ h3,
 h4,
 h5,
 h6 {
-  margin-top: 0.8em;
-  margin-bottom: 0.25em;
+  margin: 0 0 10px;
   font-family: var(--heading-font-family);
-  font-weight: 600;
-  line-height: 1.25;
+  font-weight: 700;
+  color: var(--heading-color);
   scroll-margin: 40px;
 }
 
-h1 { font-size: var(--heading-font-size-xxl); }
-h2 { font-size: var(--heading-font-size-xl); }
-h3 { font-size: var(--heading-font-size-l); }
+h1 {
+  font-size: var(--heading-font-size-xxl);
+  line-height: var(--heading-line-height-xxl);
+  color: var(--title-color);
+}
+
+h2 {
+  font-size: var(--heading-font-size-xl);
+  line-height: var(--heading-line-height-xl);
+}
+
+h3 {
+  font-size: var(--heading-font-size-l);
+  line-height: var(--heading-line-height-l);
+}
+
 h4 { font-size: var(--heading-font-size-m); }
 h5 { font-size: var(--heading-font-size-s); }
 h6 { font-size: var(--heading-font-size-xs); }
@@ -125,8 +98,17 @@ ol,
 ul,
 pre,
 blockquote {
-  margin-top: 0.8em;
-  margin-bottom: 0.25em;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+p + p {
+  margin-top: 15px;
+}
+
+sup {
+  font-size: var(--sup-font-size);
+  line-height: 0;
 }
 
 code,
@@ -143,7 +125,7 @@ pre {
 }
 
 main > div {
-  margin: 40px 16px;
+  margin: 0;
 }
 
 input,
@@ -162,7 +144,17 @@ a:any-link {
 
 a:hover {
   color: var(--link-hover-color);
+}
+
+/* inline links in authored text */
+main .default-content-wrapper a:any-link {
+  font-weight: 600;
   text-decoration: underline;
+  text-decoration-thickness: var(--link-underline);
+}
+
+main .default-content-wrapper a:hover {
+  text-decoration-thickness: calc(var(--link-underline) * 2);
 }
 
 /* buttons */
@@ -295,24 +287,168 @@ main img {
   width: 100%;
 }
 
-/* sections */
+/* buttons authored as plain links stay links (EDS button reset) */
+main .button-container {
+  display: inline;
+}
+
+main a.button:any-link {
+  background: none;
+  border: none;
+  border-radius: 0;
+  color: var(--link-color);
+  font-size: inherit;
+  font-weight: inherit;
+  padding: 0;
+  margin: 0;
+  text-decoration: underline;
+  white-space: normal;
+}
+
+/* sections — Jackson content columns (values from the source's computed layout) */
 main > .section {
-  margin: 40px 0;
+  margin: 0;
 }
 
 main > .section > div {
-  max-width: 1200px;
-  margin: auto;
-  padding: 0 24px;
+  box-sizing: border-box;
+  max-width: none;
+  margin: 0;
+  padding: 0;
 }
 
-main > .section:first-of-type {
+main > .section + .section {
+  margin-top: var(--section-spacing);
+}
+
+/* text column: 20px outer margin, 1480px max, inner gutters 0 -> 82/80 -> 150/80 */
+main > .section > .default-content-wrapper {
+  max-width: var(--content-max-width);
+  margin: 0 max(20px, calc((100% - var(--content-max-width)) / 2));
+}
+
+main .default-content-wrapper ul {
+  margin: 15px 0 var(--list-margin-bottom) 36px;
+  padding: 0 0 0 10px;
+  list-style: none;
+  font-weight: 300;
+  line-height: var(--list-line-height);
+}
+
+main .default-content-wrapper li {
+  margin: 0 0 13px;
+  font-size: var(--list-font-size);
+  line-height: var(--list-line-height);
+}
+
+main .default-content-wrapper li::before {
+  content: '●';
+  padding-right: 5px;
+  font-size: calc(var(--list-font-size) * 0.95);
+  line-height: calc(var(--list-font-size) * 1.3);
+  color: var(--link-color);
+}
+
+main .default-content-wrapper * + h2,
+main .default-content-wrapper * + h3 {
+  margin-top: 45px;
+}
+
+main .default-content-wrapper h3 ~ p {
+  font-size: var(--body-font-size-s);
+  line-height: var(--body-line-height-s);
+}
+
+/* the beige cards panel follows the intro directly; the next text block sits 45px below it */
+main > .section.light-beige {
   margin-top: 0;
 }
 
-@media (width >= 900px) {
-  main > .section > div {
+main > .section.light-beige + .section {
+  margin-top: var(--section-spacing-tight);
+}
+
+/* centered: full-width layout container (1480px max), heading centred */
+main > .section.centered > .default-content-wrapper {
+  margin: 0 max(0px, calc((100% - var(--content-max-width)) / 2));
+  text-align: center;
+}
+
+main > .section.centered h2,
+main > .section.centered h3 {
+  padding: 0 20px;
+}
+
+/* disclosure styles: Roboto legal copy in a 20px-gutter column */
+main > .section.disclosure > .default-content-wrapper,
+main > .section.risk-disclosure > .default-content-wrapper {
+  padding: 0 20px;
+  font-family: var(--disclosure-font-family);
+  font-size: var(--disclosure-font-size);
+  line-height: var(--disclosure-line-height);
+  color: var(--disclosure-color);
+}
+
+main > .section.disclosure sup,
+main > .section.risk-disclosure sup {
+  font-size: var(--disclosure-sup-font-size);
+}
+
+main > .section.disclosure strong,
+main > .section.risk-disclosure p {
+  font-size: var(--disclosure-strong-font-size);
+  line-height: var(--disclosure-strong-line-height);
+  color: var(--disclosure-strong-color);
+}
+
+main > .section.disclosure strong {
+  font-weight: 600;
+}
+
+/* the source ends each footnote/legal block with an empty paragraph: keep its space */
+main > .section.disclosure > .default-content-wrapper {
+  padding-bottom: calc(15px + var(--disclosure-line-height));
+}
+
+/* the closing availability note in the legal block is bold but not enlarged */
+main > .section.separator p:last-child strong {
+  font-size: var(--disclosure-font-size);
+  line-height: var(--disclosure-line-height);
+  color: var(--disclosure-color);
+}
+
+main > .section.separator > .default-content-wrapper::before {
+  content: '';
+  display: block;
+  height: 1px;
+  margin-bottom: 50px;
+  background-color: var(--disclosure-color);
+}
+
+@media (width >= 526px) {
+  main > .section > .default-content-wrapper {
+    padding: 0 80px 0 82px;
+  }
+}
+
+@media (width >= 651px) {
+  main > .section.centered > .default-content-wrapper {
     padding: 0 32px;
+  }
+
+  main > .section.centered h2,
+  main > .section.centered h3 {
+    padding: 0;
+  }
+}
+
+@media (width >= 1297px) {
+  main > .section > .default-content-wrapper {
+    padding: 0 80px 0 150px;
+  }
+
+  main > .section.centered > .default-content-wrapper {
+    padding: 0 90px;
   }
 }
 
